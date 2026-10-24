@@ -16,7 +16,7 @@ const mangayomiSources = [
     "hasCloudflare": false,
     "sourceCodeUrl": "https://raw.githubusercontent.com/itzjustzack/mangayomi-atsumaru/main/atsumaru.js",
     "apiUrl": "",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "isManga": true,
     "itemType": 0,
     "isFullData": false,
@@ -131,14 +131,14 @@ class DefaultExtension extends MProvider {
   }
 
   async getPopular(page) {
-    var apiPage = Math.max(parseInt(page) - 1, 0);
-    var slug = `/api/infinite/trending?page=${apiPage}&types=Manga,Manwha,Manhua,OEL${this.getAdultParam()}`;
+    var offset = Math.max(parseInt(page) - 1, 0) * 40;
+    var slug = `/api/home2/popular?offset=${offset}&limit=40&types=Manga,Manwha,Manhua,OEL&mediums=Comic&timeframe=daily${this.getAdultParam()}`;
     return await this.browse(slug);
   }
 
   async getLatestUpdates(page) {
-    var apiPage = Math.max(parseInt(page) - 1, 0);
-    var slug = `/api/infinite/recentlyUpdated?page=${apiPage}&types=Manga,Manwha,Manhua,OEL${this.getAdultParam()}`;
+    var offset = Math.max(parseInt(page) - 1, 0) * 40;
+    var slug = `/api/home2/recentlyUpdated?offset=${offset}&limit=40&types=Manga,Manwha,Manhua,OEL&mediums=Comic${this.getAdultParam()}`;
     return await this.browse(slug);
   }
 
