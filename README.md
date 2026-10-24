@@ -11,7 +11,10 @@ Manual catalogue URL:
 https://raw.githubusercontent.com/itzjustzack/mangayomi-atsumaru/main/index.json
 ```
 
-## Version 0.0.1
+## Version 0.0.2
+
+- Fix Popular and Latest HTTP 404 errors by using the current `/api/home2` endpoints with offset/limit pagination.
+- In Mangayomi, refresh the extension list and update Atsumaru Personal to 0.0.2. No repository reinstall is needed.
 
 - Independent source ID: 3971268045.
 - Popular, latest, search, filters, manga details, chapters, and reader support inherited from Swakshan's Atsumaru 0.0.2.
@@ -25,7 +28,7 @@ This source has a different ID from other Atsumaru extensions. Existing library 
 
 JavaScript syntax and a simulated Mangayomi client pass checks for catalogue consistency, dates, URLs, browse/search, manga details, chapter sorting, scanlators, and reader output. These checks use sample responses, not the live API.
 
-Live API checks could not complete because atsu.moe could not be reached from the build session. Installation and reading in Mangayomi remain unverified. Restore to your dev environment before app testing.
+Live checks passed on 2026-10-23 using the extension itself: Popular (40 results), page 2 (40 different-page results), Latest (40), search (1), details (648 chapter entries), reader (54 pages), and first page image (HTTP 200, image content type). The sample title was The Fragrant Flower Blooms with Dignity. On-device Mangayomi verification remains pending. Restore to your dev environment before app testing.
 
 ## Credits
 
